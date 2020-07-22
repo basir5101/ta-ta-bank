@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA TA Bank</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- first page -->
+    <div id="submit-form">
+        <h1 class="text-center">Welcome to TA TA Bank</h1>
+        <div class="logIn">
+            <h4>Log In</h4>
+            <br>
+            <input type="text" class="form-control" placeholder="email">
+            <br>
+            <input type="password" class="form-control" placeholder="password">
+            <br>
+            <button id="enter" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+
+    <!-- 2nd page -->
+    <!-- 1st row -->
+    <div id="calculation">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit status">
+                    <h4>Deposit</h4>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw status">
+                    <h4>Withdraw</h4>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance status">
+                    <h4>Balance</h4>
+                    <h2>$2500</h2>
+                </div>
+            </div>
+        </div>
+        <!-- form -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Deposit</h3>
+                <input type="number" placeholder="$ amount you want to deposit">
+                <button class="btn btn-success">Deposit</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Withdraw</h3>
+                <input type="number" placeholder="$ you want to withdraw">
+                <button class="btn btn-success">withdraw</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var logInBtn = document.getElementById('enter');
+        logInBtn.addEventListener('click', function(){
+         document.getElementById('submit-form').style.display = "none";
+         document.getElementById('calculation').style.display = "block";
+        })
+    </script>
+
+</body>
+</html>
