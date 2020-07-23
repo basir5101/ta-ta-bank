@@ -90,7 +90,7 @@
         document.getElementById('depositInput').value = "";
 
         })
-
+        // withdraw event handler
         const withdrawButton = document.getElementById('withdrawBtn');
         withdrawButton.addEventListener('click', function(){
             const withdrawInput = document.getElementById('withdrawInput').value;
@@ -101,10 +101,10 @@
             document.getElementById('withdrawInput').value = "";
         })
 
-        function balance(id, InputNumber){
+        function balance(id, depositInputNumber){
             const current = document.getElementById(id).innerText;
            const currentAmount = parseFloat(current);
-           const total = currentAmount + InputNumber;
+           const total = currentAmount + depositInputNumber;
            document.getElementById(id).innerText = total;
         }
 
