@@ -49,7 +49,7 @@
         <!-- form -->
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-6">
                 <div class="logIn">
                     <h3>Deposit</h3>
                     <input id="depositInput" type="number" class="form-control" placeholder="$ amount you want to deposit">
@@ -57,7 +57,7 @@
                     <button id="depositBtn" class="btn btn-success">Deposit</button>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-6">
                 <div class="logIn">
                     <h3>Withdraw</h3>
                     <input id="withdrawInput" type="text" class="form-control" placeholder="$ you want to withdraw">
@@ -77,7 +77,7 @@
          document.getElementById('calculation').style.display = "block";
         })
 
-        //deposit event handler
+        // deposit event handler
         const depositButton = document.getElementById('depositBtn');
         depositButton.addEventListener('click', function(){
            const depositInput = document.getElementById('depositInput').value;
@@ -91,21 +91,28 @@
 
         })
         // withdraw event handler
-        const withdrawButton = document.getElementById('withdrawBtn');
-        withdrawButton.addEventListener('click', function(){
-            const withdrawInput = document.getElementById('withdrawInput').value;
-            const withdrawInputNumber = parseFloat(withdrawInput);
-            console.log(withdrawInputNumber);
-            balance('currentWithdraw', withdrawInputNumber);
 
-            document.getElementById('withdrawInput').value = "";
+        const withdrawBtn = document.getElementById('withdrawBtn');
+        withdrawBtn.addEventListener('click', function(){
+           const withdrawInput = document.getElementById('withdrawInput').value;
+           const withdrawInputNumber = parseFloat(withdrawInput);
+
+        balance('currentWithdraw', withdrawInputNumber);
+        
+        balance('currentBalance', -1*withdrawInputNumber);
+        
+        
+        document.getElementById('withdrawInput').value = "";
+
         })
+       
 
         function balance(id, depositInputNumber){
             const current = document.getElementById(id).innerText;
            const currentAmount = parseFloat(current);
            const total = currentAmount + depositInputNumber;
            document.getElementById(id).innerText = total;
+           console.log(total);
         }
 
     </script>
